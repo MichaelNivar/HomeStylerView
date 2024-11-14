@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <!--android:background="@drawable/background_view_renderable"  opcional -->
+
+    <TextView
+    android:id="@+id/info_text"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Información del modelo"
+    android:textSize="14sp"
+    android:textColor="@android:color/black" />
+
+</LinearLayout>
