@@ -19,8 +19,10 @@ import com.app.homestylerview.ui.arview.MyArFragment
 import com.app.homestylerview.ui.favorite.FavoriteFragment
 import com.app.homestylerview.ui.gallery.GalleryFragment
 import com.app.homestylerview.ui.home.HomeFragment
+import com.app.homestylerview.ui.login.LoginFragment
 import com.app.homestylerview.ui.profile.ProfileFragment
 import com.google.android.material.navigation.NavigationView
+import com.google.firebase.auth.FirebaseAuth
 
 class MainActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelectedListener {
 
@@ -36,6 +38,8 @@ class MainActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelected
 
         Thread.sleep(3000)
         installSplashScreen()
+
+
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -104,6 +108,15 @@ class MainActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelected
                 .addToBackStack(null) // Esto permite regresar al fragmento anterior con el botón "back"
                 .commit()*/
         }
+        // Verificar si el usuario está autenticado
+        val currentUser = FirebaseAuth.getInstance().currentUser
+        if (currentUser == null) {
+            // Usuario no autenticado, redirigir a pantalla de inicio de sesión
+            openLoginFragment()
+            return
+        }
+
+        // Si el usuario está autenticado, continuar con la configuración habitual
         /*val navView: BottomNavigationView = binding.navView
 
         val navController = findNavController(R.id.nav_host_fragment_activity_main)
@@ -168,5 +181,11 @@ class MainActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelected
         fragmentTransaction.addToBackStack(null)
         fragmentTransaction.commit()
     }
-
+    private fun openLoginFragment() {
+        val fragment:Fragment = LoginFragment()
+        val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
+        fragmentTransaction.replace(R.id.fragment_container, fragment)
+        fragmentTransaction.addToBackStack(null)
+        fragmentTransaction.commit()
+    }
 }

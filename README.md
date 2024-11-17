@@ -1,2 +1,0 @@
-# HomeStylerView
-Proyecto Final DAM

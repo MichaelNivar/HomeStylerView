@@ -1,75 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <!-- Layout de Registro -->
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.profile.ProfileFragment">
+    <!-- LinearLayout como único hijo directo del ScrollView -->
     <LinearLayout
-        android:id="@+id/layoutRegister"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:gravity="center"
-        android:visibility="gone"
-        android:padding="16dp">
-
-        <EditText
-            android:id="@+id/etName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Nombre" />
-
-        <EditText
-            android:id="@+id/etEmail"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Correo electrónico"
-            android:inputType="textEmailAddress" />
-
-        <EditText
-            android:id="@+id/etPassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Contraseña"
-            android:inputType="textPassword" />
-
-        <Button
-            android:id="@+id/btnRegister"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Registrarse" />
-    </LinearLayout>
-
-    <!-- Layout de Perfil -->
-    <LinearLayout
-        android:id="@+id/layoutProfile"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+    <RelativeLayout
+        android:id="@+id/rl_access"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:gravity="center"
-        android:visibility="gone"
-        android:padding="16dp">
-
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:padding="15dp"
+        android:layout_gravity="center"
+        android:visibility="visible">
         <ImageView
-            android:id="@+id/ivProfileImage"
             android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:src="@drawable/ic_profile"
-            android:contentDescription="Imagen de perfil" />
-
-        <TextView
-            android:id="@+id/tvUserName"
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Nombre del Usuario"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-
+            android:id="@+id/imageView_logo"
+            android:layout_marginTop="30dp"
+            app:srcCompat="@drawable/logo"
+            android:maxWidth="180dp"
+            android:adjustViewBounds="true"
+            android:layout_centerHorizontal="true"/>
         <TextView
-            android:id="@+id/tvUserEmail"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="correo@ejemplo.com"
-            android:textSize="16sp" />
+            android:id="@+id/textview_main_head"
+            android:layout_marginTop="30dp"
+            android:text="Welcome to HomeStyler View"
+            android:textAlignment="center"
+            android:layout_below="@+id/imageView_logo"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/button_login"
+            android:text="Login"
+            android:layout_marginTop="100dp"
+            android:layout_below="@id/textview_main_head"
+            android:layout_marginLeft="70dp"
+            android:layout_marginRight="70dp" />
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/button_register"
+            android:text="Register"
+            android:layout_below="@id/button_login"
+            android:layout_marginLeft="70dp"
+            android:layout_marginRight="70dp" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rl_acceded"
+        android:layout_margin="15dp"
+        android:padding="15dp"
+        android:layout_gravity="center"
+        android:visibility="gone">
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/im_profile"
+            android:maxWidth="180dp"
+            android:layout_marginTop="30dp"
+            app:srcCompat="@drawable/ic_profile"
+            android:adjustViewBounds="true"
+            android:layout_centerHorizontal="true" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_username"
+            android:layout_below="@id/im_profile"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            android:layout_marginTop="30dp"
+            android:textAlignment="center" />
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/b_logout"
+            android:layout_below="@id/tv_username"
+            android:text="Logout"
+            android:layout_marginRight="70dp"
+            android:layout_marginLeft="70dp"
+            android:layout_marginTop="50dp" />
+    </RelativeLayout>
     </LinearLayout>
-</FrameLayout>
+</ScrollView>

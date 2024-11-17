@@ -1,6 +1,6 @@
 package com.app.homestylerview.model
 
-data class Categoria(
+data class Category(
     val idCategoria: String = "",
     val nombreCategoria: String = ""
 )

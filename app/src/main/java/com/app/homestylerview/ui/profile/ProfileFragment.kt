@@ -7,8 +7,18 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.Toast
+import androidx.lifecycle.ViewModelProvider
+import com.app.homestylerview.R
 import com.app.homestylerview.databinding.FragmentProfileBinding
+import com.app.homestylerview.repository.UserRepository
+import com.app.homestylerview.ui.login.LoginFragment
+import com.app.homestylerview.ui.signin.SigninFragment
+import com.app.homestylerview.viewmodel.UserArViewModel
+import com.app.homestylerview.viewmodel.UserArViewModelFactory
+import com.google.firebase.auth.FirebaseAuth
+import kotlinx.coroutines.flow.collect
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -24,69 +34,80 @@ class ProfileFragment : Fragment() {
 
     private var _binding: FragmentProfileBinding? = null
     private val binding get() = _binding!!
-    private lateinit var sharedPreferences: SharedPreferences
+    private lateinit var viewModel: UserArViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentProfileBinding.inflate(inflater, container, false)
-        sharedPreferences = requireActivity().getSharedPreferences("UserPrefs", Context.MODE_PRIVATE)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Verifica si el usuario está autenticado
-        val isLoggedIn = sharedPreferences.getBoolean("isLoggedIn", false)
+        val repository = UserRepository()
+        val factory = UserArViewModelFactory(repository)
+        viewModel = ViewModelProvider(this, factory).get(UserArViewModel::class.java)
 
-        if (isLoggedIn) {
-            showProfileLayout()
+        val currentUser = FirebaseAuth.getInstance().currentUser
+        if (currentUser == null) {
+            binding.rlAccess.visibility = View.VISIBLE
+            binding.rlAcceded.visibility = View.GONE
         } else {
-            showRegisterLayout()
+            binding.rlAcceded.visibility = View.VISIBLE
+            binding.rlAccess.visibility = View.GONE
+            fetchUserData(currentUser.uid)
         }
 
-        // registro del usuario
-        binding.btnRegister.setOnClickListener {
-            val name = binding.etName.text.toString()
-            val email = binding.etEmail.text.toString()
-            val password = binding.etPassword.text.toString()
+        setupClickListeners()
+    }
 
-            if (name.isNotBlank() && email.isNotBlank() && password.isNotBlank()) {
-                // Guarda el estado de inicio de sesión
-                sharedPreferences.edit()
-                    .putBoolean("isLoggedIn", true)
-                    .putString("userName", name)
-                    .putString("userEmail", email)
-                    .apply()
-
-                Toast.makeText(requireContext(), "Registro exitoso", Toast.LENGTH_SHORT).show()
-                showProfileLayout()
+    private fun fetchUserData(userId: String) {
+        viewModel.fetchUserById(userId)
+        viewModel.user.observe(viewLifecycleOwner) { user ->
+            if (user != null) {
+                binding.tvUsername.text = user.nombre
             } else {
-                Toast.makeText(requireContext(), "Completa todos los campos", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), "Usuario no encontrado", Toast.LENGTH_SHORT).show()
             }
         }
     }
 
-    private fun showRegisterLayout() {
-        binding.layoutRegister.visibility = View.VISIBLE
-        binding.layoutProfile.visibility = View.GONE
-    }
+    private fun setupClickListeners() {
+        val login: Button = binding.buttonLogin
+        login.setOnClickListener {
+            val loginFragment = LoginFragment()
 
-    private fun showProfileLayout() {
-        val name = sharedPreferences.getString("userName", "Usuario")
-        val email = sharedPreferences.getString("userEmail", "correo@ejemplo.com")
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, loginFragment)
+                .addToBackStack(null)
+                .commit()
+        }
 
-        binding.tvUserName.text = name
-        binding.tvUserEmail.text = email
+        val register: Button = binding.buttonRegister
+        register.setOnClickListener {
+            val registerFragment = SigninFragment()
 
-        binding.layoutRegister.visibility = View.GONE
-        binding.layoutProfile.visibility = View.VISIBLE
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, registerFragment)
+                .addToBackStack(null) // Añade la transacción al back stack para poder regresar
+                .commit()
+        }
+
+        val logout: Button = binding.bLogout
+        logout.setOnClickListener {
+            viewModel.logoutUser()
+            binding.rlAccess.visibility = View.VISIBLE
+            binding.rlAcceded.visibility = View.GONE
+            Toast.makeText(requireContext(), "Sesión cerrada", Toast.LENGTH_SHORT).show()
+        }
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
+
 }

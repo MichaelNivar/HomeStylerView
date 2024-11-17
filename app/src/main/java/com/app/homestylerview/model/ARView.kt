@@ -2,7 +2,7 @@ package com.app.homestylerview.model
 
 import java.util.Date
 
-data class VistaAR(
+data class ARView(
     val usuarioId: String = "",
     val fechaVista: Date = Date(),
     val ubicacionVista: String? = null,
