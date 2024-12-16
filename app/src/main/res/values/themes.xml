@@ -1,0 +1,27 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Theme.MyApplication2" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color -->
+        <item name="colorPrimary">@color/buttons</item>
+        <item name="colorPrimaryVariant">@color/title</item>
+        <item name="colorOnPrimary">@color/background</item>
+
+        <!-- Secondary brand color -->
+        <item name="colorSecondary">@color/buttons</item>
+        <item name="colorSecondaryVariant">@color/info</item>
+        <item name="colorOnSecondary">@color/menu</item>
+
+        <!-- Background and surface -->
+        <item name="android:colorBackground">@color/background</item>
+        <item name="colorSurface">@color/background</item>
+        <item name="colorOnBackground">@color/title</item>
+        <item name="colorOnSurface">@color/title</item>
+
+        <!-- Text colors -->
+        <item name="android:textColor">@color/title</item>
+        <item name="android:textColorHint">@color/info</item>
+
+        <!-- Status bar and navigation bar -->
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <item name="android:navigationBarColor">?attr/colorPrimary</item>
+    </style>
+</resources>

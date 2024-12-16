@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">HomeStyler View</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="nav_open">Open Navigation Drawer</string>
+    <string name="nav_close">Close Navigation Drawer</string>
+    <string name="info_app">Welcome to HomeStyler View, an innovative interior design app.
+
+            Key features:
+            - Augmented Reality (AR) visualization to experience products directly in your space.
+            - Wide selection of furniture and decorations for all styles.
+            - Intuitive navigation to search by categories or product names.
+            - User-friendly interface to save your favorites and capture visualizations.
+
+            Turn your ideas into reality with the most advanced technology in interior design.</string>
+    <string name="welcome_app">Welcome to HomeStyler View</string>
+    <string name="configbtn_app">Account Settings</string>
+    <string name="about_app">About the App</string>
+    <string name="logout_btn">Logout</string>
+    <string name="login_btn">Login</string>
+    <string name="signin_btn">Sign up</string>
+    <string name="enter_credentials">Please enter your credentials</string>
+    <string name="enter_details">Please enter your details to access the App</string>
+    <string name="tv_username">User name</string>
+    <string name="tv_password">Password</string>
+    <string name="tv_email">Email</string>
+    <string name="hint_username">Enter user</string>
+    <string name="hint_password">Enter password</string>
+    <string name="hint_email">Enter email</string>
+    <string name="donthave">Don\'t have an account?</string>
+    <string name="have">Already have an account?</string>
+    <string name="signup">Sign up</string>
+    <string name="login">Login</string>
+    <string name="myaccount">My Accout</string>
+    <string name="save_btn">Save</string>
+    <string name="category">Category</string>
+    <string name="tv_catname">Category Name</string>
+    <string name="hint_catname">Enter category name</string>
+    <string name="tv_catimage">Image Category</string>
+    <string name="btn_image">Image</string>
+    <string name="btn_add">Save</string>
+    <string name="list_category">List of categories</string>
+    <string name="product">Product</string>
+    <string name="tv_prodname">Product Name</string>
+    <string name="hint_prodname">Enter product name</string>
+    <string name="tv_proddescription">Product description</string>
+    <string name="hint_proddescription">Enter product description</string>
+    <string name="tv_prodimage">Image Product</string>
+    <string name="list_product">List of products</string>
+    <string name="list_favorite">My wish list</string>
+    <string name="tv_search">Search HomeStyler View</string>
+    <string name="model_notloaded">Model not loaded</string>
+    <string name="require_login_image">You must log in to capture images</string>
+    <string name="screenshot_save">Capture Saved</string>
+    <string name="require_catname">Category name is required</string>
+    <string name="require_image">Please select an image</string>
+    <string name="succesful_cat">Category created</string>
+    <string name="require_logfav">You must log in to view favorites</string>
+    <string name="user_notfound">User not found</string>
+    <string name="notproductsfav">There are no favorite products</string>
+    <string name="require_loggallery">You must log in to view favorites</string>
+    <string name="notscreenshot">No captures</string>
+    <string name="require_select">Select a category or enter a product name</string>
+    <string name="required">All fields are required</string>
+    <string name="required_prod">Please fill in all fields</string>
+    <string name="required_glbimg">Select a GLB file and an image</string>
+    <string name="succesful_login">Successful login</string>
+    <string name="failed_login">Invalid credentials</string>
+    <string name="notproducts">There are no products available</string>
+    <string name="require_addfav">You must log in to add to favorites</string>
+    <string name="succesful_prod">Product created successfully</string>
+    <string name="choose_gallery">Choose from gallery</string>
+    <string name="choose_camera">Take photo</string>
+    <string name="change_image">Change profile picture</string>
+    <string name="required_update">Please complete all fields</string>
+    <string name="update_save">Data saved</string>
+    <string name="logout">Session closeda</string>
+    <string name="succesful_user">User registered successfully</string>
+    <string name="btn_admin">Manage</string>
+    <string name="btn_main">App</string>
+</resources>

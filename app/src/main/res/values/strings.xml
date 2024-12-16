@@ -1,0 +1,84 @@
+<resources>
+    <string name="app_name">HomeStyler View</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="nav_open">Open Navigation Drawer</string>
+    <string name="nav_close">Close Navigation Drawer</string>
+    <string name="info_app">Bienvenido a HomeStyler View, una aplicación innovadora de decoración de interiores.
+
+            Características principales:
+            - Visualización en Realidad Aumentada (AR) para experimentar los productos directamente en tu espacio.
+            - Amplia selección de muebles y decoraciones para todos los estilos.
+            - Navegación intuitiva para buscar por categorías o nombres de productos.
+            - Interfaz amigable para guardar tus favoritos y capturar visualizaciones.
+
+            Convierte tus ideas en realidad con la tecnología más avanzada en diseño de interiores.</string>
+    <string name="welcome_app">Bienvenido a HomeStyler View</string>
+    <string name="configbtn_app">Configuracion de la cuenta</string>
+    <string name="about_app">Sobre la App</string>
+    <string name="logout_btn">Cerrar Sesion</string>
+    <string name="login_btn">Iniciar Sesion</string>
+    <string name="signin_btn">Registrar</string>
+    <string name="enter_credentials">Por favor ingrese sus crendenciales</string>
+    <string name="enter_details">Por favor ingrese sus datos para ingresar a la App</string>
+    <string name="tv_username">Nombre de usuario</string>
+    <string name="tv_password">Contraseña</string>
+    <string name="tv_email">Correo</string>
+    <string name="hint_username">Introduzca usuario</string>
+    <string name="hint_password">Introduzca contraseña</string>
+    <string name="hint_email">Introduzca correo</string>
+    <string name="donthave">¿No tienes una cuenta?</string>
+    <string name="have">¿Tienes una cuenta?</string>
+    <string name="signup">Registrate</string>
+    <string name="login">Inicia Sesion</string>
+    <string name="myaccount">Mi cuenta</string>
+    <string name="save_btn">Guardar</string>
+    <string name="category">Categoria</string>
+    <string name="tv_catname">Nombre de categoria</string>
+    <string name="hint_catname">Introduzca nombre de categoria</string>
+    <string name="tv_catimage">Imagen de Categoria</string>
+    <string name="btn_image">Imagen</string>
+    <string name="btn_add">Crear</string>
+    <string name="list_category">Lista de categorias</string>
+    <string name="product">Producto</string>
+    <string name="tv_prodname">Nombre de producto</string>
+    <string name="hint_prodname">Introduzca nombre de producto</string>
+    <string name="tv_proddescription">Descripcion de producto</string>
+    <string name="hint_proddescription">Introduzca descripcion de producto</string>
+    <string name="tv_prodimage">Imagen de Producto</string>
+    <string name="list_product">Lista de productos</string>
+    <string name="list_favorite">Mi lista de deseos</string>
+    <string name="tv_search">Buscar en HomeStyler View</string>
+    <string name="model_notloaded">Modelo no cargado</string>
+    <string name="require_login_image">Debes iniciar sesión para capturar imágenes</string>
+    <string name="screenshot_save">Captura Guardada</string>
+    <string name="require_catname">Nombre de categoria es obligatorio</string>
+    <string name="require_image">Por favor, selecciona una imagen</string>
+    <string name="succesful_cat">Categoria creada</string>
+    <string name="require_logfav">Debe iniciar sesión para ver favoritos</string>
+    <string name="user_notfound">Usuario no encontrado</string>
+    <string name="notproductsfav">No hay productos favoritos</string>
+    <string name="require_loggallery">Debe iniciar sesión para ver favoritos</string>
+    <string name="notscreenshot">No hay capturas</string>
+    <string name="require_select">Seleccione una categoría o ingrese el nombre de un producto</string>
+    <string name="required">Todos los campos son obligatorios</string>
+    <string name="required_prod">Por favor, rellene todos los campos</string>
+    <string name="required_glbimg">Seleccione un archivo GLB y una imagen</string>
+    <string name="succesful_login">Inicio de sesión exitosa</string>
+    <string name="failed_login">Credenciales inválidas</string>
+    <string name="notproducts">No hay productos disponibles</string>
+    <string name="require_addfav">Debe iniciar sesión para agregar a favoritos</string>
+    <string name="succesful_prod">Producto creado con éxito</string>
+    <string name="choose_gallery">Elegir de galería</string>
+    <string name="choose_camera">Tomar foto</string>
+    <string name="change_image">Cambiar imagen de perfil</string>
+    <string name="required_update">Por favor, completa todos los campos</string>
+    <string name="update_save">Datos guardados</string>
+    <string name="logout">Sesión cerrada</string>
+    <string name="succesful_user">Usuario registrado con éxito</string>
+    <string name="btn_admin">Administrar</string>
+    <string name="btn_main">App</string>
+</resources>

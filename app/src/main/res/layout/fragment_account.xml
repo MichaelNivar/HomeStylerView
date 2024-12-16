@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.profile.AccountFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:layout_margin="15dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textview_account_head"
+            android:layout_marginTop="30dp"
+            android:text="@string/myaccount"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+        <FrameLayout
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/circle_background"
+            android:clipToOutline="true"
+            android:id="@+id/fr_imageaccount"
+            android:layout_below="@+id/textview_account_head">
+        <ImageView
+            android:id="@+id/im_accprofile"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/ic_profile"
+            android:adjustViewBounds="true" />
+        </FrameLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textview_account_fullname"
+            android:layout_below="@id/fr_imageaccount"
+            android:text="@string/tv_username"
+            android:textSize="16sp"
+            android:padding="6dp"
+            android:layout_marginTop="25dp" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/et_account_fullname"
+            android:hint="@string/hint_username"
+            android:textColor="@color/black"
+            android:layout_below="@id/textview_account_fullname"
+            android:textSize="16sp"
+            android:padding="6dp"
+            android:inputType="textPersonName"
+            android:background="@drawable/border"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textview_account_email"
+            android:layout_below="@id/textview_account_fullname"
+            android:text="@string/tv_email"
+            android:textSize="16sp"
+            android:padding="6dp"
+            android:layout_marginTop="50dp" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/et_account_email"
+            android:hint="@string/hint_email"
+            android:textColor="@color/black"
+            android:layout_below="@id/textview_account_email"
+            android:textSize="16sp"
+            android:padding="6dp"
+            android:inputType="textEmailAddress"
+            android:background="@drawable/border"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textview_account_password"
+            android:layout_below="@id/textview_account_email"
+            android:text="@string/tv_password"
+            android:textSize="16sp"
+            android:padding="6dp"
+            android:layout_marginTop="50dp" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/et_account_password"
+            android:hint="@string/hint_password"
+            android:textColor="@color/black"
+            android:layout_below="@id/textview_account_password"
+            android:textSize="16sp"
+            android:padding="6dp"
+            android:inputType="textPassword"
+            android:background="@drawable/border"
+            android:drawableEnd="@drawable/ic_visibility_off"/>
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/b_save"
+            android:text="@string/save_btn"
+            android:layout_below="@id/et_account_password"
+            android:layout_marginTop="50dp"
+            android:layout_marginRight="70dp"
+            android:layout_marginLeft="70dp" />
+    </RelativeLayout>
+
+</ScrollView>

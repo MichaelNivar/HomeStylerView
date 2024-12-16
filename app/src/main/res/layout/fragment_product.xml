@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.product.ProductFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:layout_margin="15dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_product"
+            android:layout_marginTop="30dp"
+            android:text="@string/product"
+            android:textColor="@color/title"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_addproduct"
+            android:layout_below="@id/tv_product"
+            android:textColor="@color/title"
+            android:layout_marginTop="25dp"
+            android:text="@string/tv_prodname"
+            android:textSize="16sp" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/et_addprodcut"
+            android:layout_below="@id/tv_addproduct"
+            android:hint="@string/hint_prodname"
+            android:textColor="@color/black"
+            android:inputType="text"
+            android:padding="6dp"
+            android:textSize="16sp"
+            android:background="@drawable/border" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_description"
+            android:layout_below="@id/et_addprodcut"
+            android:textColor="@color/title"
+            android:layout_marginTop="25dp"
+            android:text="@string/tv_proddescription"
+            android:textSize="16sp" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/et_description"
+            android:layout_below="@id/tv_description"
+            android:textColor="@color/black"
+            android:hint="@string/hint_proddescription"
+            android:inputType="text"
+            android:padding="6dp"
+            android:textSize="16sp"
+            android:background="@drawable/border" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_category"
+            android:layout_below="@id/et_description"
+            android:textColor="@color/title"
+            android:layout_marginTop="25dp"
+            android:text="@string/category"
+            android:textSize="16sp" />
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/sp_category"
+            android:layout_below="@id/tv_category" />
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/b_glb"
+            android:text="GLB"
+            android:layout_below="@id/sp_category"
+            android:layout_marginTop="25dp" />
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/im_glb"
+            android:layout_below="@id/b_glb" />
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/b_image"
+            android:text="@string/btn_image"
+            android:layout_below="@id/im_glb"
+            android:layout_marginTop="25dp" />
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/im_image"
+            android:layout_below="@id/b_image" />
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/b_addproduct"
+            android:layout_marginTop="25dp"
+            android:layout_marginRight="70dp"
+            android:layout_marginLeft="70dp"
+            android:layout_below="@id/im_image"
+            android:text="@string/btn_add" />
+    </RelativeLayout>
+
+</ScrollView>
